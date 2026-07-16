@@ -9,7 +9,7 @@ notes: "Based on previous Lutris installers for Gears of War, this Steam Deck ve
         \ - Launcher Bypass\r\n\
         \ - Xliveless\r\n\
         \ - AMD Troika Fix\r\n\
-        \ - Uncapped Frame Rate"
+        \ - Optional Frame Limit"
 runner: wine
 slug: gears-of-war-deck
 version: DVD version
@@ -38,9 +38,6 @@ script:
     - troika:
         filename: d3dx10_35.dll
         url: https://github.com/pickingupthepcs/steam-deck/raw/refs/heads/main/gears-of-war/d3dx10_35.dll
-    - autoexec:
-        filename: autoexec.cfg
-        url: https://github.com/pickingupthepcs/steam-deck/raw/refs/heads/main/gears-of-war/autoexec.cfg
 
     game:
       exe: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Gears of War/Binaries/Startup.exe
@@ -67,9 +64,16 @@ script:
         executable: $DISC/autorun.exe
         name: wineexec
         prefix: $GAMEDIR
-    - move:
-        dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Gears of War/Binaries/
-        src: autoexec
+    - input_menu:
+        description: "Disable Frame Limit (62 FPS)?:"
+        id: LIMIT
+        options:
+        - "set Engine.GameEngine bSmoothFrameRate TRUE": "No"
+        - "set Engine.GameEngine bSmoothFrameRate FALSE": "Yes"
+        preselect: "set Engine.GameEngine bSmoothFrameRate TRUE"
+    - write_file:
+        file: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Gears of War/Binaries/autoexec.cfg
+        content: $INPUT_LIMIT
     - task:
         app: d3dx9 d3dx10 d3dx10_43 d3dcompiler_42 d3dcompiler_43 d3dcompiler_46 d3dcompiler_47 dotnet40 dotnet462 dotnet48
         arch: win64
