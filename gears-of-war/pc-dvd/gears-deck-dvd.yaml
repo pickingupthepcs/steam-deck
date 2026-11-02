@@ -36,10 +36,10 @@ script:
         url: https://community.pcgamingwiki.com/files/file/576-xliveless/?do=download&r=12662&confirm=1&t=1&csrfKey=85eec127b200c1b3901d0eed51bf1820
     - troika:
         filename: d3dx10_35.dll
-        url: https://github.com/pickingupthepcs/steam-deck/gears-of-war/pc-dvd/raw/refs/heads/main/d3dx10_35.dll
+        url: https://github.com/pickingupthepcs/steam-deck/raw/refs/heads/main/gears-of-war/pc-dvd/d3dx10_35.dll
     - steamdeck:
         filename: steamdeck.zip
-        url: https://github.com/pickingupthepcs/steam-deck/gears-of-war/pc-dvd/raw/refs/heads/main/steamdeck.zip
+        url: https://github.com/pickingupthepcs/steam-deck/raw/refs/heads/main/gears-of-war/pc-dvd/steamdeck.zip
 
     game:
       exe: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Gears of War/Binaries/Startup.exe
