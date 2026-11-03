@@ -39,7 +39,7 @@ Gears of War can be installed using any of the following four methods:<br>
     2. `System options` > Prefer system libraries: `disabled`
 
 ### 5. Prepare Gears of War Installer
-1. Download [gears-deck-dvd.yaml](https://github.com/pickingupthepcs/gears-of-war/blob/main/gears-deck-dvd.yaml)
+1. Download [gears-deck-dvd.yaml](https://github.com/pickingupthepcs/steam-deck/blob/main/gears-of-war/pc-dvd/gears-deck-dvd.yaml)
 2. Launch `Lutris` if closed
 3. Select `Add Game [+]`
 4. Select `Install from a local install script`
